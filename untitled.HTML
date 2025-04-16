@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Moderation API – Beta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-card: #1b1b1b;
+      --border-color: #292929;
+      --text-light: #ffffff;
+      --text-muted: #cccccc;
+      --accent: #ff0050;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      background-color: #000;
+      border-bottom: 2px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .logo img {
+      height: 40px;
+    }
+    select {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-light);
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+    }
+    .hero {
+      text-align: center;
+      margin-top: 4rem;
+      animation: fadeInDown 1.8s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 3.4rem;
+      margin: 0.5rem 0;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      max-width: 960px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .card {
+      background-color: var(--bg-card);
+      padding: 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--accent);
+      padding-left: 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+    footer {
+      background: #0b0b0b;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok Logo">
+      <span id="logoText">TikTok Moderation API</span>
+    </div>
+    <select id="langSwitch">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </header>  <div class="hero">
+    <h1 id="mainTitle">TikTok Moderation API – Beta Phase</h1>
+    <p id="subTitle">A new way to automatically monitor TikTok Live – trusted, fast and still in development.</p>
+  </div>  <section>
+    <div class="card">
+      <h2 id="updatesTitle">Updates</h2>
+      <ul id="updatesList">
+        <li>April 13, 2025 – Release of the TikTok Moderation API Beta</li>
+        <li>April 14, 2025 – Added automated moderation messages (AI or human)</li>
+        <li>April 15, 2025 – Rebranded moderation features as "System"</li>
+      </ul>
+    </div><div class="card">
+  <h2 id="faqTitle">Frequently Asked Questions</h2>
+  <ul id="faqList">
+    <li><strong>Can I block system messages?</strong><br>Yes. However, the system continues monitoring in the background. You simply won't receive messages anymore.</li>
+    <li><strong>Is there a system account?</strong><br>No. TikTok operates the system directly – there's no user-visible account.</li>
+    <li><strong>Are TikTok comments moderated?</strong><br>Not yet. Currently, the system only watches TikTok Live streams.</li>
+    <li><strong>What languages are supported?</strong><br>English and German. More languages coming soon.</li>
+  </ul>
+</div>
+
+  </section>  <footer>
+    &copy; 2025 TikTok Moderation API Simulation – Unofficial project. Not affiliated with TikTok Inc.
+  </footer>  <script>
+    const translations = {
+      en: {
+        logo: "TikTok Moderation API",
+        mainTitle: "TikTok Moderation API – Beta Phase",
+        subTitle: "A new way to automatically monitor TikTok Live – trusted, fast and still in development.",
+        updatesTitle: "Updates",
+        updates: [
+          "April 13, 2025 – Release of the TikTok Moderation API Beta",
+          "April 14, 2025 – Added automated moderation messages (AI or human)",
+          "April 15, 2025 – Rebranded moderation features as 'System'"
+        ],
+        faqTitle: "Frequently Asked Questions",
+        faq: [
+          "Can I block system messages? Yes. However, the system continues monitoring in the background. You simply won't receive messages anymore.",
+          "Is there a system account? No. TikTok operates the system directly – there's no user-visible account.",
+          "Are TikTok comments moderated? Not yet. Currently, the system only watches TikTok Live streams.",
+          "What languages are supported? English and German. More languages coming soon."
+        ]
+      },
+      de: {
+        logo: "TikTok Moderations-API",
+        mainTitle: "TikTok Moderations-API – Beta-Phase",
+        subTitle: "Ein neues System zur automatischen Moderation von TikTok Live – zuverlässig, schnell und in Entwicklung.",
+        updatesTitle: "Aktuelle Änderungen",
+        updates: [
+          "13. April 2025 – Veröffentlichung der TikTok Moderations-API (Beta)",
+          "14. April 2025 – Automatisierte Moderationsnachrichten hinzugefügt (KI oder Moderator)",
+          "15. April 2025 – Moderation wurde als 'System' umbenannt"
+        ],
+        faqTitle: "Häufige Fragen",
+        faq: [
+          "Kann ich Systemnachrichten blockieren? Ja. Das System läuft aber im Hintergrund weiter. Du bekommst nur keine Nachrichten mehr.",
+          "Gibt es ein Systemkonto? Nein. TikTok steuert das System direkt – es gibt keinen sichtbaren Nutzer.",
+          "Werden TikTok-Kommentare moderiert? Noch nicht. Derzeit wird nur TikTok Live überwacht.",
+          "Welche Sprachen werden unterstützt? Englisch und Deutsch. Weitere folgen bald."
+        ]
+      }
+    };
+
+    const langSwitch = document.getElementById('langSwitch');
+    const updateElements = {
+      logo: document.getElementById('logoText'),
+      mainTitle: document.getElementById('mainTitle'),
+      subTitle: document.getElementById('subTitle'),
+      updatesTitle: document.getElementById('updatesTitle'),
+      updatesList: document.getElementById('updatesList'),
+      faqTitle: document.getElementById('faqTitle'),
+      faqList: document.getElementById('faqList')
+    };
+
+    langSwitch.addEventListener('change', () => {
+      const lang = langSwitch.value;
+      const t = translations[lang];
+
+      updateElements.logo.textContent = t.logo;
+      updateElements.mainTitle.textContent = t.mainTitle;
+      updateElements.subTitle.textContent = t.subTitle;
+      updateElements.updatesTitle.textContent = t.updatesTitle;
+      updateElements.faqTitle.textContent = t.faqTitle;
+
+      updateElements.updatesList.innerHTML = '';
+      t.updates.forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        updateElements.updatesList.appendChild(li);
+      });
+
+      updateElements.faqList.innerHTML = '';
+      t.faq.forEach(text => {
+        const li = document.createElement('li');
+        li.innerHTML = '<strong>' + text.split('?')[0] + '?</strong><br>' + text.split('?')[1];
+        updateElements.faqList.appendChild(li);
+      });
+    });
+  </script></body>
+</html>
